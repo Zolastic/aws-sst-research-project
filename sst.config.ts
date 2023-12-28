@@ -5,14 +5,15 @@ export default {
   config(_input) {
     return {
       name: "aws-sst",
-      region: "us-east-1",
+      region: "ap-southeast-1",
     };
   },
   stacks(app) {
+    app.setDefaultRemovalPolicy("destroy");
     app.stack(function Site({ stack }) {
       const site = new NextjsSite(stack, "site", {
         environment: {
-          DATABASE_URL: process.env.DATABASE_URL as string,
+          DATABASE_URL: process.env.DATABASE_URL!,
         },
       });
 

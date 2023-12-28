@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 
-type Props = {};
-
 import {
   Dialog,
   DialogContent,
@@ -21,7 +19,7 @@ import { api } from "@/trpc/react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
-const CreatePostIt = (props: Props) => {
+const CreatePostIt = () => {
   const [name, setName] = useState<string>("");
   const [content, setContent] = useState<string>("");
 
